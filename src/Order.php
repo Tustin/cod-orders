@@ -7,6 +7,15 @@ class Order {
     const ORDER_WEEKLY = 2;
     const ORDER_SPECIAL = 3; // Just a guess, there's no special order as I made this
     const CONTRACT = 4;
+    // 5 = nothing
+    // 6 = something that can have 4 orders active at once
+    // 7 = something that can only have one active
+    // 8 = something that can have 3 orders active at once
+    const ORDER_ZOMBIES_WEEKLY = 9;
+    //10 = something that can only have one active. could also be ORDER_ZOMBIES_SPECIAL instead of 12?
+    const ORDER_ZOMBIES_DAILY = 11;
+    const ORDER_ZOMBIES_SPECIAL = 12; // Also a guess
+    const ORDER_COMMUNITY = 13;
 
     const WEAPON_VARIANT_STANDARD = 0;
     const WEAPON_VARIANT_RARE = 1;
