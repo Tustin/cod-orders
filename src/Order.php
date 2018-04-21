@@ -42,6 +42,7 @@ class Order {
     }
 
     public function reward(Reward $reward, $font, int $textSize, $x, $y) {
+        global $weapons;
         $reward_item = $reward->label;
         $has_image = false;
         $hard = false;
