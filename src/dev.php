@@ -37,11 +37,6 @@ $orders = json_decode($orders);
 if (!$orders->data || $orders->status != "success" || !count($orders->data->Achievements)) throw new exception("bad order data");
 
 $image = imagecreatefrompng($assets . "/templates/orders.png");
-$supply_drop_image = imagecreatefrompng($assets . "/rewards/sd.png");
-$rare_supply_drop_image = imagecreatefrompng($assets . "/rewards/rsd.png");
-$credits_image = imagecreatefrompng($assets . "/rewards/credits.png");
-$social_image = imagecreatefrompng($assets . "/rewards/social.png");
-$xp_image = imagecreatefrompng($assets . "/rewards/xp.png");
 
 $white = imagecolorallocate($image, 255, 255, 255);
 $black = imagecolorallocate($image, 0, 0, 0);
