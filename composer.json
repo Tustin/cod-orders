@@ -1,0 +1,11 @@
+{
+    "require": {
+        "abraham/twitteroauth": "^0.7.4",
+        "ext-gd": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}

@@ -1,0 +1,298 @@
+WEAPONFILE,displayName
+agent_mp,
+airstrike_bomb_axis_mp,WEAPON_STINGER
+airstrike_bomb_mp,WEAPON_STINGER
+azon_projectile_grenadier_mp,WEAPON_STINGER
+azon_projectile_mp,WEAPON_STINGER
+bar_loot0_mp,Cool Hand
+bar_loot1_mp,Dude Up
+bar_loot2_mp,Fly Boy
+bar_loot3_mp,Old Captain
+bar_mp,BAR
+bazooka_loot0_mp,Pointblank
+bazooka_loot1_mp,Menace
+bazooka_loot2_mp,Eagle's Nest
+bazooka_loot3_mp,Vulcan
+bazooka_mp,M1 Bazooka
+beretta_loot0_mp,Orso
+beretta_loot1_mp,Twisted
+beretta_loot2_mp,Golden Goose
+beretta_loot3_mp,Liberator
+beretta_mp,Orso
+bomb_site_mp,WEAPON_CLAYMORE
+bouncingbetty_mp,S-Mine 44
+breda30_loot0_mp,GPMG
+breda30_loot1_mp,Fiore Di Morte
+breda30_loot2_mp,Capo Verde
+breda30_loot3_mp,Hand Warmer
+breda30_mp,GPMG
+bren_loot0_mp,Combatant
+bren_loot1_mp,Royalty
+bren_loot2_mp,Crown
+bren_loot3_mp,King and Country
+bren_mp,Bren
+briefcase_bomb_defuse_mp,
+briefcase_bomb_mp,
+c4_mp,S-Mine 44
+carepackage_crate_mp,WEAPON_STINGER
+combatknife_loot0_mp,Combat Knife
+combatknife_loot1_mp,Deliverance
+combatknife_loot2_mp,Thunder
+combatknife_loot3_mp,Salvation
+combatknife_mp,Combat Knife
+counter_recon_gun_mp,
+defaultweapon_mp,Default Weapon
+deployable_vest_marker_mp,WEAPON_DEPLOYABLE_VEST_MARKER
+destructible_car,WEAPON_CLAYMORE
+destructible_toy,WEAPON_CLAYMORE
+emote_weapon_mp,
+enfieldno2_loot0_mp,Enfield No. 2
+enfieldno2_loot1_mp,Repeller
+enfieldno2_loot2_mp,Rebuker
+enfieldno2_loot3_mp,Obstructor
+enfieldno2_mp,Enfield No. 2
+fg42_loot0_mp,Stinkeroo
+fg42_loot1_mp,Stripe-Happy
+fg42_loot2_mp,Revised
+fg42_loot3_mp,Kampfflugzeug
+fg42_mp,FG 42
+fighter_strike_gun_mp,
+fighter_strike_plane_grenadier_mp,WEAPON_STINGER
+fighter_strike_plane_mp,WEAPON_STINGER
+firebomb_bomb_axis_grenadier_mp,WEAPON_STINGER
+firebomb_bomb_axis_mp,WEAPON_STINGER
+firebomb_bomb_grenadier_mp,WEAPON_STINGER
+firebomb_bomb_mp,WEAPON_STINGER
+firebomb_flames_mp,
+flak_guns_projectile_mp,WEAPON_STINGER
+flamethrower_german_mp,Flammenwerfer 35
+flamethrower_mp,M2 Flamethrower
+frag_grenade_german_mp,WEAPON_M67FRAGGRENADE
+frag_grenade_mp,WEAPON_M67FRAGGRENADE
+frag_grenade_short_mp,WEAPON_M67FRAGGRENADE
+fritzx_projectile_grenadier_mp,WEAPON_STINGER
+fritzx_projectile_mp,WEAPON_STINGER
+g43_loot0_mp,Gewehr 43
+g43_loot1_mp,Nobel
+g43_loot2_mp,Kapitan
+g43_loot3_mp,Chiller
+g43_mp,Gewehr 43
+gamemode_ball,
+greasegun_loot0_mp,Brandi
+greasegun_loot1_mp,Roxy
+greasegun_loot2_mp,Candy
+greasegun_loot3_mp,Rosie
+greasegun_mp,Grease Gun
+icepick_loot0_mp,Ice Pick
+icepick_loot1_mp,Clean Slate
+icepick_loot2_mp,The Rattler
+icepick_loot3_mp,Gold Digger
+icepick_mp,Ice Pick
+iw5_carrydrone_mp,Gridiron Ball
+iw5_underwater_mp,
+kar98_loot0_mp,Nightmare
+kar98_loot1_mp,Fallen
+kar98_loot2_mp,Commander
+kar98_loot3_mp,Torpedo
+kar98_mp,Kar98k
+karabin_loot0_mp,Husky
+karabin_loot1_mp,Kutusov
+karabin_loot2_mp,Midnight
+karabin_loot3_mp,The Patriot
+karabin_mp,Karabin
+killstreak_air_strike_mp,
+killstreak_carepackage_grenade_axis_mp,
+killstreak_carepackage_grenade_mp,
+killstreak_counter_uav_mp,
+killstreak_emergency_carepackage_grenade_axis_mp,
+killstreak_emergency_carepackage_grenade_mp,
+killstreak_emp_mp,
+killstreak_flak_gun_mp,
+killstreak_missile_strike_mp,
+killstreak_molotov_cocktail_grenadier_mp,Molotov Cocktail
+killstreak_molotov_cocktail_mp,Molotov Cocktail
+killstreak_mortar_mp,
+killstreak_plane_gunner_mp,
+killstreak_uav_axis_mp,
+killstreak_uav_mp,
+leeenfield_loot0_mp,Roundabout
+leeenfield_loot1_mp,Greased
+leeenfield_loot2_mp,Sweetie
+leeenfield_loot3_mp,The Royal
+leeenfield_mp,Lee Enfield
+lewis_loot0_mp,English Oak
+lewis_loot1_mp,Landship
+lewis_loot2_mp,Boulevardier
+lewis_loot3_mp,Chatter Box
+lewis_mp,Lewis
+luger_loot0_mp,Abwehr
+luger_loot1_mp,Adlertag
+luger_loot2_mp,Torch
+luger_loot3_mp,Der Adler
+luger_mp,P-08
+m1911_loot0_mp,Juno
+m1911_loot1_mp,Jupiter
+m1911_loot2_mp,Totalize
+m1911_loot3_mp,The American
+m1911_mp,1911
+m1941_loot0_mp,The Cook
+m1941_loot1_mp,Battle Watch
+m1941_loot2_mp,Jawbreaker
+m1941_loot3_mp,Savior
+m1941_mp,M1941
+m1a1_loot0_mp,Bug Juice
+m1a1_loot1_mp,Body Snatcher
+m1a1_loot2_mp,Bite The Dust
+m1a1_loot3_mp,Lil' Biscuit
+m1a1_mp,M1A1 Carbine
+m1garand_loot0_mp,Rookie
+m1garand_loot1_mp,Front Line
+m1garand_loot2_mp,Volunteer
+m1garand_loot3_mp,Independent
+m1garand_mp,M1 Garand
+m30_loot0_mp,The Triple
+m30_loot1_mp,Valkyrie
+m30_loot2_mp,Einfall
+m30_loot3_mp,Door Kicker
+m30_mp,M30 Luftwaffe Drilling
+m712_loot0_mp,Metallisch
+m712_loot1_mp,Holzpistole
+m712_loot2_mp,Heimat
+m712_loot3_mp,Schlange
+m712_mp,Machine Pistol
+mas38_loot0_mp,M-38
+mas38_loot1_mp,Top O' The Mornin'
+mas38_loot2_mp,Homestead
+mas38_loot3_mp,Forsaken
+mas38_mp,M-38
+mg15_loot0_mp,Shorty
+mg15_loot1_mp,Blade
+mg15_loot2_mp,Ack-Ack
+mg15_loot3_mp,Guerilla
+mg15_mp,MG 15
+mg42_loot0_mp,Zipper
+mg42_loot1_mp,Devil's Piano
+mg42_loot2_mp,Rolling Thunder
+mg42_loot3_mp,Buzzsaw
+mg42_mp,MG 42
+mg81_loot0_mp,MG 81
+mg81_loot1_mp,Big Irish
+mg81_loot2_mp,Dark Lord
+mg81_loot3_mp,Untamed
+mg81_mp,MG 81
+missile_strike_projectile_axis_mp,WEAPON_STINGER
+missile_strike_projectile_mp,WEAPON_STINGER
+model21_loot0_mp,Acrobat
+model21_loot1_mp,Domino
+model21_loot2_mp,Crusader
+model21_loot3_mp,Cruiser
+model21_mp,Sawed-off Shotgun
+mortar_strike_projectile_axis_mp,WEAPON_STINGER
+mortar_strike_projectile_mp,WEAPON_STINGER
+mp28_loot0_mp,Soggy
+mp28_loot1_mp,Oil Can
+mp28_loot2_mp,Trigger Happy
+mp28_loot3_mp,Waffenschmiede
+mp28_mp,Waffe 28
+mp40_loot0_mp,Son of Mars
+mp40_loot1_mp,Do-Re-Mi
+mp40_loot2_mp,All-out
+mp40_loot3_mp,Wunderwaffe
+mp40_mp,MP-40
+none,
+p38_loot0_mp,Rebuff
+p38_loot1_mp,Privilege
+p38_loot2_mp,Immunity
+p38_loot3_mp,Carte Blanche
+p38_mp,9mm SAP
+panzerschreck_loot0_mp,Merkur
+panzerschreck_loot1_mp,Stove Pipe
+panzerschreck_loot2_mp,Thunderclap
+panzerschreck_loot3_mp,Blitzkrieg
+panzerschreck_mp,Panzerschreck
+plane_gunner_bomber_projectile_mp,WEAPON_STINGER
+ppsh41_loot0_mp,Duck Soup
+ppsh41_loot1_mp,The Snake
+ppsh41_loot2_mp,Thrive
+ppsh41_loot3_mp,Iron Curtain
+ppsh41_mp,PPSh-41
+reich_loot0_mp,Reichsrevolver
+reich_loot1_mp,Gilded Torment
+reich_loot2_mp,Oppressor
+reich_loot3_mp,Iron Hand
+reich_mp,Reichsrevolver
+scavenger_bag_mp,Scavenger
+search_dstry_bomb_defuse_mp,
+search_dstry_bomb_mp,
+semtex_mp,WEAPON_SEMTEX
+shovel_loot0_mp,Fortitude
+shovel_loot1_mp,Flash
+shovel_loot2_mp,Eureka
+shovel_loot3_mp,Army Banjo
+shovel_mp,US Shovel
+signal_flare_mp,Signal Flare
+smoke_grenade_axis_mp,Smoke Grenade
+smoke_grenade_mp,Smoke Grenade
+springfield_loot0_mp,Gum Shoe
+springfield_loot1_mp,Faithful
+springfield_loot2_mp,Ranger
+springfield_loot3_mp,Warbird
+springfield_mp,M1903
+sten_loot0_mp,Sten
+sten_loot1_mp,Rooted
+sten_loot2_mp,Royal Skull
+sten_loot3_mp,Frosty
+sten_mp,Sten
+stg44_loot0_mp,Serum
+stg44_loot1_mp,Shingles
+stg44_loot2_mp,Haywire
+stg44_loot3_mp,Red Baron
+stg44_mp,STG44
+stun_grenade_mp,WEAPON_FLASH_GRENADE
+svt40_loot0_mp,O.A.O
+svt40_loot1_mp,S.O.L
+svt40_loot2_mp,Shack Man
+svt40_loot3_mp,Siberian
+svt40_mp,SVT-40
+tabun_grenade_mp,Smoke Grenade
+thermite_flames_mp,
+thermite_mp,WEAPON_M67FRAGGRENADE
+thompson_loot0_mp,Buck Private
+thompson_loot1_mp,Wilco
+thompson_loot2_mp,Handler
+thompson_loot3_mp,Wayfinder
+thompson_mp,M1928
+throwingknife_mp,Throwing Knife
+trenchknife_loot0_mp,Trench Knife
+trenchknife_loot1_mp,Teeth Grinder
+trenchknife_loot2_mp,Mean Machine
+trenchknife_loot3_mp,Screwed Up
+trenchknife_mp,Trench Knife
+turret_mg42_raid_crouch_mp,MG 42
+turret_mg42_raid_stand_mp,MG 42
+turretweapon_plane_gunner_bomber_mp,
+turretweapon_plane_gunner_turret_grenadier_mp,
+turretweapon_plane_gunner_turret_mp,
+type100_loot0_mp,Blue Sky
+type100_loot1_mp,Righteous
+type100_loot2_mp,Checked Out
+type100_loot3_mp,Empire
+type100_mp,Type 100
+uav_remote_mp,
+v2_rocket_mp,WEAPON_STINGER
+volk_loot0_mp,Volkssturmgewehr
+volk_loot1_mp,The Goat
+volk_loot2_mp,Defiance
+volk_loot3_mp,Resistor
+volk_mp,Volkssturmgewehr
+walther_loot0_mp,Dynamo
+walther_loot1_mp,Flag Top
+walther_loot2_mp,Enigma
+walther_loot3_mp,Winter's Wild
+walther_mp,Toggle Action
+winchester1897_loot0_mp,Catchpole
+winchester1897_loot1_mp,Battleaxe
+winchester1897_loot2_mp,Disruptor
+winchester1897_loot3_mp,Trench Runner
+winchester1897_mp,Combat Shotgun
+ww2_fighter_bullet_mp,WEAPON_STINGER
