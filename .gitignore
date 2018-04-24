@@ -3,3 +3,4 @@ vendor/
 orders/
 assets/weapons/
 src/env.php
+src/main.php
