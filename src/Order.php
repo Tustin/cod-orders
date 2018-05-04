@@ -57,11 +57,11 @@ class Order {
             imagecopy($this->template, $new, $x, $y, 0, 0, imagesx($new), imagesy($new));
             $has_image = true;
         } else if ($reward->type == "product") {
-            if (!$this->order->successRewards[0]->product->name) {
                 // daily_ch_winchesterloot0_2
                 $parts = explode("_", $this->order->name);
                 $weapon_name_check = substr($parts[2], 0);
                 $weapon_variant_type = $parts[3];
+            if (!$this->order->successRewards[0]->product->name) {
                 $weapon = Weapon::hard($weapon_name_check);
                 $hard = true;
             } else {
@@ -79,7 +79,8 @@ class Order {
                 imagecopy($this->template, $new, $x + 240, $y - 5, 0, 0, imagesx($new), imagesy($new));
 
                 $reward_item = ($this->order->successRewards[0]->product->name) ? $this->order->successRewards[0]->product->label : $weapons[$weapon->localized];
-                if ($hard && intval($weapon_variant_type) == 2) {
+                $is_heroic = (strpos($reward_item, "II") === false);
+                if (!$is_heroic && intval($weapon_variant_type) == 2) {
                     $reward_item = $reward_item . " II";
                 }
             }
