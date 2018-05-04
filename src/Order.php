@@ -79,7 +79,8 @@ class Order {
                 imagecopy($this->template, $new, $x + 240, $y - 5, 0, 0, imagesx($new), imagesy($new));
 
                 $reward_item = ($this->order->successRewards[0]->product->name) ? $this->order->successRewards[0]->product->label : $weapons[$weapon->localized];
-                $is_heroic = (strpos($reward_item, "II") === false);
+                $is_heroic = (strpos($reward_item, "II") !== false);
+                
                 if (!$is_heroic && intval($weapon_variant_type) == 2) {
                     $reward_item = $reward_item . " II";
                 }
