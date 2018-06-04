@@ -41,7 +41,7 @@ class Order {
         imagettftext($this->template, $resized, 0, $x, $y, $this->white, $font, $order_name);
     }
 
-    public function reward(Reward $reward, $font, int $textSize, $x, $y) {
+    public function reward(Reward $reward, $font, int $textSize, $x, $y, $isSpecial = false) {
         global $weapons;
         $reward_item = $reward->label;
         $has_image = false;
@@ -61,10 +61,10 @@ class Order {
                 $parts = explode("_", $this->order->name);
                 $weapon_name_check = substr($parts[2], 0);
                 $weapon_variant_type = $parts[3];
-            if (!$this->order->successRewards[0]->product->name) {
+            if (!$this->order->successRewards[0]->product->name && !$isSpecial) {
                 $weapon = Weapon::hard($weapon_name_check);
                 $hard = true;
-            } else {
+            } else if (!$isSpecial){
                 $weapon = Weapon::easy($this->order->successRewards[0]->product->name);
             }
 
@@ -93,12 +93,47 @@ class Order {
 
     public function criteria($font, int $textSize, int $x, int $y, int $wrap = 40) {
         $order_critera = $this->order->descriptionLabel ?? "No criteria given.";
-        $order_critera = wordwrap($order_critera, $wrap);
-        imagettftext($this->template, $textSize, 0, $x, $y, $this->white, $font, $order_critera);
+        //$order_critera = wordwrap($order_critera, $wrap);
+        $this->colorizer($x, $y, $order_critera, $textSize, $font);
+        //imagettftext($this->template, $textSize, 0, $x, $y, $this->white, $font, $order_critera);
     }
 
     private function resizer($baseFontSize, $textLengthMax, $textLength): int {
         $div = $textLength / $textLengthMax;
         return ($div < 1) ? $baseFontSize : $baseFontSize - $div;
+    }
+
+    private function colorizer($x, $y, $text, $textSize, $font) : void {
+        $colors = [
+            "^1" => [255, 0, 0],
+            "^3" => [255, 255, 0],
+            "^7" => [255, 255, 255],
+        ];
+
+
+        $font_color = $this->white;
+        $base_x = $x;
+        for ($i = 0; $i < strlen($text); $i++) { 
+
+            // Custom wordwrap
+            if ($i != 0 && $i % 40 == 0) {
+                $x = $base_x;
+                $y += 20;
+                imagettftext($this->template, $textSize, 0, $x, $y, $font_color, $font, "\n");
+            }
+            if ($text[$i] != '^') goto write;
+
+            // Lol
+            $color_code = $colors[$text[$i] . $text[$i + 1]];
+            if (!$color_code) goto write;
+            $i += 2;
+
+            $font_color = imagecolorallocate($this->template, ...$color_code);
+
+            write:
+            $bbox = imagettftext($this->template, $textSize, 0, intval($x), $y, $font_color, $font, $text[$i]);
+            $x = $bbox[2];
+
+        }
     }
 }

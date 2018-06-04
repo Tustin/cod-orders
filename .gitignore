@@ -2,5 +2,7 @@ dev/
 vendor/
 orders/
 assets/weapons/
+assets/templates
 src/env.php
 src/main.php
+src/run.php
