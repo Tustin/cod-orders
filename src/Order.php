@@ -10,10 +10,10 @@ class Order {
     // 5 = nothing
     // 6 = something that can have 4 orders active at once
     // 7 = something that can only have one active
-    // 8 = something that can have 3 orders active at once
+    const ORDER_ZOMBIES_DAILY = 8;
     const ORDER_ZOMBIES_WEEKLY = 9;
     //10 = something that can only have one active. could also be ORDER_ZOMBIES_SPECIAL instead of 12?
-    const ORDER_ZOMBIES_DAILY = 11;
+    const CONTRACT_ZOMBIES = 11;
     const ORDER_ZOMBIES_SPECIAL = 12; // Also a guess
     const ORDER_COMMUNITY = 13;
 
