@@ -22,9 +22,9 @@ function get_orders() : object {
 }
 
 function get_weapons_csv() : array {
-    $weapon_csv = file('weaponTable.csv');
+    $weapon_csv = file(dirname(__FILE__, 3) . '/src/wwii/weaponTable.csv');
     $weapons = [];
-    $weapon_icon_files = array_diff(scandir('weapons'), ['..', '.']);
+    $weapon_icon_files = array_diff(scandir(dirname(__FILE__, 3) . '/src/wwii/weapons'), ['..', '.']);
 
     if (!$weapon_csv) throw new Exception("weapon_csv is null");
 

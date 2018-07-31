@@ -52,7 +52,7 @@ foreach ($parsed_orders[Order::ORDER_DAILY] as $order) {
 
     $orders_text[Order::ORDER_DAILY][] = [
         "title" => $order_name,
-        "critera" => $criteria,
+        "criteria" => $criteria,
         "reward" => $reward->label
     ];
 }
@@ -80,7 +80,7 @@ foreach ($parsed_orders[Order::ORDER_WEEKLY] as $order) {
 
     $orders_text[Order::ORDER_WEEKLY][] = [
         "title" => $order_name,
-        "critera" => $criteria,
+        "criteria" => $criteria,
         "reward" => $reward->label
     ];
 }
@@ -103,7 +103,7 @@ if (array_key_exists(Order::ORDER_SPECIAL, $parsed_orders)) {
 
     $orders_text[Order::ORDER_SPECIAL][] = [
         "title" => $order_name,
-        "critera" => $criteria,
+        "criteria" => $criteria,
         "reward" => $reward->label
     ];
 } else {
