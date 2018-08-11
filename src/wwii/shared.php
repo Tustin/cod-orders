@@ -7,6 +7,12 @@ const ORDER_TITLE_FONT_SIZE = 16;
 const ORDER_REWARD_FONT_SIZE = 12;
 const ORDER_CRITERIA_FONT_SIZE = 12;
 
+function setup() : void {
+    if (!file_exists('orders/')) mkdir('orders/');
+    if (!file_exists('orders/multiplayer/')) mkdir('orders/multiplayer/');
+    if (!file_exists('orders/zombies/')) mkdir('orders/zombies/');
+}
+
 function get_orders() : object {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'https://my.callofduty.com/api/papi-client/crm/cod/v2/title/wwii/platform/psn/achievements/scheduled/gamer/tustin25/');

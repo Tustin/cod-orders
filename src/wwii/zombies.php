@@ -7,6 +7,8 @@ require 'order.php';
 require 'reward.php';
 require 'weapon.php';
 
+setup();
+
 $orders = get_orders();
 
 file_put_contents('orders/wwii/zombies/' . date("mdY") . '.json', $orders);

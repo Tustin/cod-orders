@@ -7,6 +7,8 @@ require 'order.php';
 require 'reward.php';
 require 'weapon.php';
 
+setup();
+
 $orders = get_orders();
 $weapons = get_weapons_csv(); 
 
