@@ -19,6 +19,8 @@ $white = imagecolorallocate($image, 255, 255, 255);
 $black = imagecolorallocate($image, 0, 0, 0);
 
 $parsed_orders = [];
+$orders_text = [];
+
 foreach ($orders->data->Achievements as $achievement) {
     $parsed_orders[$achievement->kind][] = $achievement;
 }
@@ -42,12 +44,18 @@ foreach ($parsed_orders[Order::ORDER_ZOMBIES_DAILY] as $order) {
     $panel = new Order($image, $order);
     $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, $order_title_position_x + ($index * 367), $order_title_position_y + ($row * 156));
     $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, $order_title_position_x + ($index * 367), ($order_title_position_y + 10) + ($row * 156));
-    $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x + ($index * 367), $order_critera_position_y + ($row * 156));
+    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x + ($index * 367), $order_critera_position_y + ($row * 156));
 
     if (++$index % 3 == 0) {
         $row++;
         $index = 0;
     }
+
+    $orders_text[Order::ORDER_ZOMBIES_DAILY][] = [
+        "title" => $order_name,
+        "criteria" => $criteria,
+        "reward" => $reward->label
+    ];
 }
 
 $index = 0;
@@ -67,9 +75,15 @@ foreach ($parsed_orders[Order::ORDER_ZOMBIES_WEEKLY] as $order) {
     $panel = new Order($image, $order);
     $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, $order_title_position_x + ($index * 367), $order_title_position_y);
     $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, $order_title_position_x + ($index * 367), $order_title_position_y + 10);
-    $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x + ($index * 367), $order_critera_position_y);
+    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x + ($index * 367), $order_critera_position_y);
 
     $index++;
+
+    $orders_text[Order::ORDER_ZOMBIES_WEEKLY][] = [
+        "title" => $order_name,
+        "criteria" => $criteria,
+        "reward" => $reward->label
+    ];
 }
 
 $order_title_position_x = 338;
@@ -86,10 +100,20 @@ if (array_key_exists(Order::ORDER_ZOMBIES_SPECIAL, $parsed_orders)) {
     $panel = new Order($image, $order);
     $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, $order_title_position_x, $order_title_position_y);
     $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, $order_title_position_x, $order_title_position_y + 10, true);
-    $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x , $order_critera_position_y);
+    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x , $order_critera_position_y);
+
+    $orders_text[Order::ORDER_ZOMBIES_WEEKLY][] = [
+        "title" => $order_name,
+        "criteria" => $criteria,
+        "reward" => $reward->label
+    ];
 } else {
     imagettftext($image, ORDER_TITLE_FONT_SIZE, 0, $order_title_position_x, $order_title_position_y, $white, $order_font_file, "No Special Order Available");
 }
 
 $order_image_name = 'orders/zombies/' . date("mdY") . '.png';
+$orders_text["image"] = $order_image_name;
+
 imagepng($image, $order_image_name);
+
+echo json_encode($orders_text);

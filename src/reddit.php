@@ -18,10 +18,9 @@ class Reddit {
         $this->getToken();
     }
 
-    public function postText(string $subreddit, string $title, string $content)  {
+    public function postText(string $subreddit, string $title, string $content) {
         $headers = [
             'Authorization: bearer ' . $this->access_token,
-            'Content-Type: application/json; charset=utf-8',
             'User-Agent: WWIIOrders by /u/tustin25'
         ];
 
@@ -36,16 +35,51 @@ class Reddit {
         $ch = curl_init("https://oauth.reddit.com/api/submit");
 
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch,CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_PROXY, '127.0.0.1:8888');
 
         $response = curl_exec($ch);
 
         $data = json_decode($response);
 
-        if (!$data['success']) {
+        if ((isset($data->success) && !$data->success) || 
+             isset($data->json->errors) && !empty($data->json->errors)) {
+            throw new Exception("error");
+        }
+
+        return $data->json->data;
+    }
+
+    public function postComment(string $thingId, string $content) {
+        $headers = [
+            'Authorization: bearer ' . $this->access_token,
+            'User-Agent: WWIIOrders by /u/tustin25'
+        ];
+
+        $data = [
+            "thing_id" => $thingId,
+            "text" => $content,
+            "api_type" => "json"
+        ];
+
+        $ch = curl_init("https://oauth.reddit.com/api/comment");
+
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_PROXY, '127.0.0.1:8888');
+
+        $response = curl_exec($ch);
+
+        $data = json_decode($response);
+
+        if ((isset($data->success) && !$data->success) || 
+             isset($data->json->errors) && !empty($data->json->errors)) {
             throw new Exception("error");
         }
     }

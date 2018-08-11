@@ -113,6 +113,8 @@ if (array_key_exists(Order::ORDER_SPECIAL, $parsed_orders)) {
 }
 
 $order_image_name = 'orders/multiplayer/' . date("mdY") . '.png';
+$orders_text["image"] = $order_image_name;
+
 imagepng($image, $order_image_name);
 
 echo json_encode($orders_text);
