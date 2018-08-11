@@ -25,12 +25,12 @@ const PRODUCT_XP = '2147483674';
 const PRODUCT_SD_AND_SOCIAL = '2147483851';
 
 class ProductType {
-    public const SD = 1;
-    public const WEAPON = 2;
-    public const CURRENCY = 4;
-    public const XP = 8;
-    public const MISC = 16;
-    public const UNK = 32;
+    const SD = 1;
+    const WEAPON = 2;
+    const CURRENCY = 4;
+    const XP = 8;
+    const MISC = 16;
+    const UNK = 32;
 }
 
 class Reward {
