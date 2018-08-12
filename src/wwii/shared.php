@@ -28,7 +28,7 @@ function get_orders() : object {
 }
 
 function get_weapons_csv() : array {
-    $weapon_csv = file(dirname(__FILE__, 3) . '/src/wwii/weaponTable.csv');
+    $weapon_csv = file(dirname(__FILE__, 3) . '/src/wwii/weaponsTable.csv');
     $weapons = [];
     $weapon_icon_files = array_diff(scandir(dirname(__FILE__, 3) . '/src/wwii/weapons'), ['..', '.']);
 

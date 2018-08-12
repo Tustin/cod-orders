@@ -2,6 +2,21 @@ WEAPONFILE,displayName
 agent_mp,
 airstrike_bomb_axis_mp,WEAPON_STINGER
 airstrike_bomb_mp,WEAPON_STINGER
+arisaka_loot0_mp,Type 38
+arisaka_loot1_mp,Ronin
+arisaka_loot2_mp,Black Hornet
+arisaka_loot3_mp,Hydra
+arisaka_mp,Type 38
+avs36_loot0_mp,AVS-36
+avs36_loot1_mp,Comrade
+avs36_loot2_mp,The Last Tsar
+avs36_loot3_mp,Red Storm
+avs36_mp,AVS-36
+axe_loot0_mp,Fire Axe
+axe_loot1_mp,Guillotine
+axe_loot2_mp,The Job
+axe_loot3_mp,Patient Zero
+axe_mp,Fire Axe
 azon_projectile_grenadier_mp,WEAPON_STINGER
 azon_projectile_mp,WEAPON_STINGER
 bar_loot0_mp,Cool Hand
@@ -9,6 +24,11 @@ bar_loot1_mp,Dude Up
 bar_loot2_mp,Fly Boy
 bar_loot3_mp,Old Captain
 bar_mp,BAR
+baseballbat_loot0_mp,Baseball Bat
+baseballbat_loot1_mp,Double
+baseballbat_loot2_mp,Triple
+baseballbat_loot3_mp,Homerun
+baseballbat_mp,Baseball bat
 bazooka_loot0_mp,Pointblank
 bazooka_loot1_mp,Menace
 bazooka_loot2_mp,Eagle's Nest
@@ -19,6 +39,11 @@ beretta_loot1_mp,Twisted
 beretta_loot2_mp,Golden Goose
 beretta_loot3_mp,Liberator
 beretta_mp,Orso
+blunderbuss_loot0_mp,Blunderbuss
+blunderbuss_loot1_mp,Old Fashioned
+blunderbuss_loot2_mp,Devastator
+blunderbuss_loot3_mp,Prometheus
+blunderbuss_mp,Blunderbuss
 bomb_site_mp,WEAPON_CLAYMORE
 bouncingbetty_mp,S-Mine 44
 breda30_loot0_mp,GPMG
@@ -41,7 +66,17 @@ combatknife_loot2_mp,Thunder
 combatknife_loot3_mp,Salvation
 combatknife_mp,Combat Knife
 counter_recon_gun_mp,
+dagger_loot0_mp,Push Dagger
+dagger_loot1_mp,Talon
+dagger_loot2_mp,Heirloom
+dagger_loot3_mp,Corkscrew
+dagger_mp,Push Dagger
 defaultweapon_mp,Default Weapon
+delisle_loot0_mp,Whisper
+delisle_loot1_mp,Nightfall
+delisle_loot2_mp,Specter
+delisle_loot3_mp,Last Words
+delisle_mp,De Lisle
 deployable_vest_marker_mp,WEAPON_DEPLOYABLE_VEST_MARKER
 destructible_car,WEAPON_CLAYMORE
 destructible_toy,WEAPON_CLAYMORE
@@ -51,6 +86,12 @@ enfieldno2_loot1_mp,Repeller
 enfieldno2_loot2_mp,Rebuker
 enfieldno2_loot3_mp,Obstructor
 enfieldno2_mp,Enfield No. 2
+extra_health_mp,
+federov_loot0_mp,Automaton
+federov_loot1_mp,The Fixer
+federov_loot2_mp,The Sparrow
+federov_loot3_mp,The Dacha
+federov_mp,Automaton
 fg42_loot0_mp,Stinkeroo
 fg42_loot1_mp,Stripe-Happy
 fg42_loot2_mp,Revised
@@ -65,7 +106,9 @@ firebomb_bomb_grenadier_mp,WEAPON_STINGER
 firebomb_bomb_mp,WEAPON_STINGER
 firebomb_flames_mp,
 flak_guns_projectile_mp,WEAPON_STINGER
+flamethrower_german_grenadier_mp,Flammenwerfer 35
 flamethrower_german_mp,Flammenwerfer 35
+flamethrower_grenadier_mp,M2 Flamethrower
 flamethrower_mp,M2 Flamethrower
 frag_grenade_german_mp,WEAPON_M67FRAGGRENADE
 frag_grenade_mp,WEAPON_M67FRAGGRENADE
@@ -120,6 +163,11 @@ leeenfield_loot1_mp,Greased
 leeenfield_loot2_mp,Sweetie
 leeenfield_loot3_mp,The Royal
 leeenfield_mp,Lee Enfield
+leveraction_loot0_mp,Lever Action
+leveraction_loot1_mp,Scorpion
+leveraction_loot2_mp,The Sheriff
+leveraction_loot3_mp,Dread
+leveraction_mp,Lever Action
 lewis_loot0_mp,English Oak
 lewis_loot1_mp,Landship
 lewis_loot2_mp,Boulevardier
@@ -135,6 +183,16 @@ m1911_loot1_mp,Jupiter
 m1911_loot2_mp,Totalize
 m1911_loot3_mp,The American
 m1911_mp,1911
+m1919_loot0_mp,Stinger
+m1919_loot1_mp,American Muscle
+m1919_loot2_mp,Sentinel
+m1919_loot3_mp,The Basilisk
+m1919_mp,Stinger
+m1935_loot0_mp,ITRA Burst
+m1935_loot1_mp,Bella Donna
+m1935_loot2_mp,Femme Fatale
+m1935_loot3_mp,Lightning Strike
+m1935_mp,ITRA Burst
 m1941_loot0_mp,The Cook
 m1941_loot1_mp,Battle Watch
 m1941_loot2_mp,Jawbreaker
@@ -145,11 +203,18 @@ m1a1_loot1_mp,Body Snatcher
 m1a1_loot2_mp,Bite The Dust
 m1a1_loot3_mp,Lil' Biscuit
 m1a1_mp,M1A1 Carbine
+m1garand_blades_mp,M1 Garand
 m1garand_loot0_mp,Rookie
 m1garand_loot1_mp,Front Line
 m1garand_loot2_mp,Volunteer
 m1garand_loot3_mp,Independent
 m1garand_mp,M1 Garand
+m2carbine_loot0_mp,M2 Carbine
+m2carbine_loot1_mp,Guardian
+m2carbine_loot2_mp,Apex Predator
+m2carbine_loot3_mp,The Brave
+m2carbine_mp,M2 Carbine
+m30_blades_mp,M30 Luftwaffe Drilling
 m30_loot0_mp,The Triple
 m30_loot1_mp,Valkyrie
 m30_loot2_mp,Einfall
@@ -189,6 +254,11 @@ model21_loot3_mp,Cruiser
 model21_mp,Sawed-off Shotgun
 mortar_strike_projectile_axis_mp,WEAPON_STINGER
 mortar_strike_projectile_mp,WEAPON_STINGER
+mosin_loot0_mp,3-Line Rifle
+mosin_loot1_mp,No Surrender
+mosin_loot2_mp,The Comrade
+mosin_loot3_mp,Motherland
+mosin_mp,3-Line Rifle
 mp28_loot0_mp,Soggy
 mp28_loot1_mp,Oil Can
 mp28_loot2_mp,Trigger Happy
@@ -199,6 +269,11 @@ mp40_loot1_mp,Do-Re-Mi
 mp40_loot2_mp,All-out
 mp40_loot3_mp,Wunderwaffe
 mp40_mp,MP-40
+nambu_loot0_mp,Nambu Type 2
+nambu_loot1_mp,Wraith
+nambu_loot2_mp,The Dragon
+nambu_loot3_mp,Stitches
+nambu_mp,Nambu Type 2
 none,
 p38_loot0_mp,Rebuff
 p38_loot1_mp,Privilege
@@ -216,11 +291,24 @@ ppsh41_loot1_mp,The Snake
 ppsh41_loot2_mp,Thrive
 ppsh41_loot3_mp,Iron Curtain
 ppsh41_mp,PPSh-41
+ptrs41_loot0_mp,PTRS-41
+ptrs41_loot1_mp,The Giant
+ptrs41_loot2_mp,Tank Killer
+ptrs41_loot3_mp,Vermin
+ptrs41_mp,PTRS-41
 reich_loot0_mp,Reichsrevolver
 reich_loot1_mp,Gilded Torment
 reich_loot2_mp,Oppressor
 reich_loot3_mp,Iron Hand
 reich_mp,Reichsrevolver
+relic_mp,Relic of the Undead
+ribeyrolles_loot0_mp,Ribeyrolles
+ribeyrolles_loot1_mp,The Brawler
+ribeyrolles_loot2_mp,Cruel Courtesan
+ribeyrolles_loot3_mp,Breezy
+ribeyrolles_mp,Ribeyrolles
+riotshield_mp,Cavalry Shield
+s2_tactical_insertion_device_mp,WEAPON_FLARE
 scavenger_bag_mp,Scavenger
 search_dstry_bomb_defuse_mp,
 search_dstry_bomb_mp,
@@ -230,8 +318,11 @@ shovel_loot1_mp,Flash
 shovel_loot2_mp,Eureka
 shovel_loot3_mp,Army Banjo
 shovel_mp,US Shovel
+signal_flare_expeditionary_mp,Signal Flare
 signal_flare_mp,Signal Flare
+smoke_grenade_axis_expeditionary_mp,Smoke Grenade
 smoke_grenade_axis_mp,Smoke Grenade
+smoke_grenade_expeditionary_mp,Smoke Grenade
 smoke_grenade_mp,Smoke Grenade
 springfield_loot0_mp,Gum Shoe
 springfield_loot1_mp,Faithful
@@ -243,6 +334,11 @@ sten_loot1_mp,Rooted
 sten_loot2_mp,Royal Skull
 sten_loot3_mp,Frosty
 sten_mp,Sten
+sterling_loot0_mp,Sterling
+sterling_loot1_mp,Fatal Elegance
+sterling_loot2_mp,Royal Decree
+sterling_loot3_mp,Blitz-Breaker
+sterling_mp,Sterling
 stg44_loot0_mp,Serum
 stg44_loot1_mp,Shingles
 stg44_loot2_mp,Haywire
@@ -254,7 +350,14 @@ svt40_loot1_mp,S.O.L
 svt40_loot2_mp,Shack Man
 svt40_loot3_mp,Siberian
 svt40_mp,SVT-40
+sword_loot0_mp,Claymore
+sword_loot1_mp,Legend Maker
+sword_loot2_mp,Executioner
+sword_loot3_mp,Survivor
+sword_mp,Claymore
 tabun_grenade_mp,Smoke Grenade
+tactical_insertion_parachute_mp,
+teslagunmtx_mp,Tesla Gun
 thermite_flames_mp,
 thermite_mp,WEAPON_M67FRAGGRENADE
 thompson_loot0_mp,Buck Private
@@ -278,6 +381,11 @@ type100_loot1_mp,Righteous
 type100_loot2_mp,Checked Out
 type100_loot3_mp,Empire
 type100_mp,Type 100
+type5_loot0_mp,Type 5
+type5_loot1_mp,Clockwork
+type5_loot2_mp,Chivalry's Dead
+type5_loot3_mp,Show of Force
+type5_mp,Type 5
 uav_remote_mp,
 v2_rocket_mp,WEAPON_STINGER
 volk_loot0_mp,Volkssturmgewehr
@@ -290,9 +398,16 @@ walther_loot1_mp,Flag Top
 walther_loot2_mp,Enigma
 walther_loot3_mp,Winter's Wild
 walther_mp,Toggle Action
+war_tripwire_impact_fx_mp,M1 Garand
+war_tripwire_mp,Tripwire
 winchester1897_loot0_mp,Catchpole
 winchester1897_loot1_mp,Battleaxe
 winchester1897_loot2_mp,Disruptor
 winchester1897_loot3_mp,Trench Runner
 winchester1897_mp,Combat Shotgun
 ww2_fighter_bullet_mp,WEAPON_STINGER
+zk383_loot0_mp,The Lion
+zk383_loot1_mp,Silver Saint
+zk383_loot2_mp,Thunder Log
+zk383_loot3_mp,Czech'd Out
+zk383_mp,ZK-383
