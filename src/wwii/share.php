@@ -20,16 +20,18 @@ $date = date('l, F jS, Y');
 // Multiplayer
 $data = json_decode(shell_exec('php multiplayer.php'));
 
-if ($data === null && json_last_error() !== JSON_ERROR_NONE) die("bad json data");
+if ($data === null && json_last_error() !== JSON_ERROR_NONE) die("bad json data for mp");
 
-// $tweet_text = '#CODWWII Orders for '. $date;
-// $media = $connection->upload('media/upload', ['media' => $data->image]);
-// $parameters = [
-//     'status' => $tweet_text,
-//     'media_ids' => implode(',', [$media->media_id_string])
-// ];
+$tweet_text = '#CODWWII Orders for '. $date;
+$media = $connection->upload('media/upload', ['media' => $data->image]);
+$parameters = [
+    'status' => $tweet_text,
+    'media_ids' => implode(',', [$media->media_id_string])
+];
 
-// $result = $connection->post('statuses/update', $parameters);
+$result = $connection->post('statuses/update', $parameters);
+
+$image = $result->entities->media[0]->media_url;
 
 
 $body = "Daily Orders:\n\n";
@@ -57,8 +59,23 @@ $reddit = new Reddit(
     getenv('ORDERS_REDDIT_PASSWORD')
 );
 
-$redditInfo = $reddit->postText('NotAWWIITest', sprintf('Orders for %s', $date), $body);
+$redditInfo = $reddit->postLink('WWII', sprintf('Orders for %s', $date), $image);
 
 if (isset($redditInfo->name)) {
     $reddit->postComment($redditInfo->name, $body);
 }
+
+
+// Zombies
+$data = json_decode(shell_exec('php zombies.php'));
+
+if ($data === null && json_last_error() !== JSON_ERROR_NONE) die("bad json data for zm");
+
+$tweet_text = '#WWIIZombies Orders for '. $date;
+$media = $connection->upload('media/upload', ['media' => $data->image]);
+$parameters = [
+    'status' => $tweet_text,
+    'media_ids' => implode(',', [$media->media_id_string])
+];
+
+$result = $connection->post('statuses/update', $parameters);
