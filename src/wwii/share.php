@@ -4,7 +4,7 @@ date_default_timezone_set('America/Los_Angeles');
 require dirname(__FILE__, 3) . '/vendor/autoload.php';
 // Need to properly autoload these in the future.
 require 'order.php';
-require '../Reddit.php';
+require '../reddit.php';
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
