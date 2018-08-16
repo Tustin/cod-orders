@@ -14,7 +14,7 @@ $weapons = get_weapons_csv();
 
 file_put_contents('orders/wwii/multiplayer/' . date("mdY") . '.json', $orders);
 
-$image = imagecreatefrompng('templates/orders.png');
+$image = imagecreatefrompng('templates/orders_multiplayer.png');
 
 $white = imagecolorallocate($image, 255, 255, 255);
 $black = imagecolorallocate($image, 0, 0, 0);
@@ -30,11 +30,17 @@ foreach ($orders->data->Achievements as $achievement) {
 $index = 0;
 $row = 0;
 
-$order_title_position_x = 77;
-$order_title_position_y = 27;
+$order_title_position_x = 265;
+$order_title_position_y = 88;
 
-$order_critera_position_x = 12;
-$order_critera_position_y = 100;
+$order_reward_position_y_difference = 75;
+
+$order_critera_position_x = 52;
+$order_critera_position_y = 319;
+
+
+$order_x_difference = 1275;
+$order_y_difference = 156;
 
 // Daily
 foreach ($parsed_orders[Order::ORDER_DAILY] as $order) { 
@@ -43,9 +49,9 @@ foreach ($parsed_orders[Order::ORDER_DAILY] as $order) {
     $order_name = $order->label ?? $order->name;
     $reward = Reward::parse($order->successRewards[0]);
     $panel = new Order($image, $order);
-    $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, $order_title_position_x + ($index * 367), $order_title_position_y + ($row * 156));
-    $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, $order_title_position_x + ($index * 367), ($order_title_position_y + 10) + ($row * 156));
-    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x + ($index * 367), $order_critera_position_y + ($row * 156));
+    $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, DAILY_ORDER_TITLE_POSITION_X + ($index * ORDER_X_DIFFERENCE), DAILY_ORDER_TITLE_POSITION_Y + ($row * ORDER_Y_DIFFERENCE));
+    $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, DAILY_ORDER_TITLE_POSITION_X + ($index * ORDER_X_DIFFERENCE), (DAILY_ORDER_TITLE_POSITION_Y + ORDER_REWARD_POSITION_Y_DIFFERENCE) + ($row * ORDER_Y_DIFFERENCE));
+    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, DAILY_ORDER_CRITERIA_POSITION_X + ($index * ORDER_X_DIFFERENCE), DAILY_ORDER_CRITERIA_POSITION_Y + ($row * ORDER_Y_DIFFERENCE));
 
     if (++$index % 3 == 0) {
         $row++;
@@ -74,9 +80,9 @@ foreach ($parsed_orders[Order::ORDER_WEEKLY] as $order) {
     $reward = Reward::parse($order->successRewards[0]);
 
     $panel = new Order($image, $order);
-    $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, $order_title_position_x + ($index * 367), $order_title_position_y);
-    $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, $order_title_position_x + ($index * 367), $order_title_position_y + 10);
-    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x + ($index * 367), $order_critera_position_y);
+    $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, WEEKLY_ORDER_TITLE_POSITION_X + ($index * ORDER_X_DIFFERENCE), WEEKLY_ORDER_TITLE_POSITION_Y);
+    $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, WEEKLY_ORDER_TITLE_POSITION_X + ($index * ORDER_X_DIFFERENCE), WEEKLY_ORDER_TITLE_POSITION_Y + ORDER_REWARD_POSITION_Y_DIFFERENCE);
+    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x + ($index * ORDER_X_DIFFERENCE), $order_critera_position_y);
 
     $index++;
 

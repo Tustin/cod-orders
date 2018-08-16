@@ -27,6 +27,17 @@ class Order {
     private $black;
     private $white;
 
+    const REWARD_IMAGE_W = 256;
+    const REWARD_IMAGE_H = 256;
+
+    const WEAPON_IMAGE_W = 512;
+    const WEAPON_IMAGE_H = 512;
+
+    const WEAPON_X_DIFFERENCE = 240;
+    const WEAPON_Y_DIFFERENCE = 5;
+
+    const REWARD_TEXT_POSITION_X_DIFFERENCE = 18;
+    const REWARD_TEXT_POSITION_Y_DIFFERENCE = 12;
 
     public function __construct($template, object $order) {
         $this->template = $template;
@@ -47,8 +58,8 @@ class Order {
         $has_image = false;
         if ($reward->image != null) {
             // Create a new small and transparent image of the reward item
-            $new_w = 15;
-            $new_h = 15;
+            $new_w = self::REWARD_IMAGE_W;
+            $new_h = self::REWARD_IMAGE_H;
             $new = imagecreatetruecolor($new_w, $new_h);
             imagecolortransparent($new, $this->black);
             imagecopyresampled($new, $reward->image, 0, 0, 0, 0, $new_w, $new_h, imagesx($reward->image), imagesy($reward->image));
@@ -68,14 +79,14 @@ class Order {
             }
 
             if (isset($weapon) && $weapon->localized && $weapon->image) {
-                $new_w = 45;
-                $new_h = 45;
+                $new_w = WEAPON_IMAGE_W;
+                $new_h = WEAPON_IMAGE_H;
 
                 $new = imagecreatetruecolor($new_w, $new_h);
                 imagecolortransparent($new, $this->black);
                 imagecopyresampled($new, $weapon->image, 0, 0, 0, 0, $new_w, $new_h, imagesx($weapon->image), imagesy($weapon->image));
 
-                imagecopy($this->template, $new, $x + 240, $y - 5, 0, 0, imagesx($new), imagesy($new));
+                imagecopy($this->template, $new, $x + self::WEAPON_X_DIFFERENCE, $y - self::WEAPON_Y_DIFFERENCE, 0, 0, imagesx($new), imagesy($new));
 
                 $reward_item = ($this->order->successRewards[0]->product->name) ? $this->order->successRewards[0]->product->label : $weapons[$weapon->localized];
                 $is_heroic = (strpos($reward_item, "II") !== false);
@@ -86,8 +97,8 @@ class Order {
             }
         }
 
-        $reward_text_pos = $has_image ? $x + 18 : $x;
-        imagettftext($this->template, $textSize, 0, $reward_text_pos, $y + 12, $this->white, $font, $reward_item);
+        $reward_text_pos = $has_image ? $x + self::REWARD_TEXT_POSITION_X_DIFFERENCE : $x;
+        imagettftext($this->template, $textSize, 0, $reward_text_pos, $y + self::REWARD_TEXT_POSITION_Y_DIFFERENCE, $this->white, $font, $reward_item);
     }
 
     public function criteria($font, int $textSize, int $x, int $y, int $wrap = 40) {
