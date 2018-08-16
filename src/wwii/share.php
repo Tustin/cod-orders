@@ -4,7 +4,6 @@ date_default_timezone_set('America/Los_Angeles');
 require dirname(__FILE__, 3) . '/vendor/autoload.php';
 // Need to properly autoload these in the future.
 require 'order.php';
-require '../reddit.php';
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
@@ -30,41 +29,6 @@ $parameters = [
 ];
 
 $result = $connection->post('statuses/update', $parameters);
-
-$image = $result->entities->media[0]->media_url;
-
-
-$body = "Daily Orders:\n\n";
-
-foreach ($data->{Order::ORDER_DAILY} as $daily) {
-    $body .= sprintf("**%s** - *%s* - %s\n\n", $daily->title, $daily->criteria, $daily->reward);
-}
-
-$body .= "Weekly Orders:\n\n";
-
-foreach ($data->{Order::ORDER_WEEKLY} as $weekly) {
-    $body .= sprintf("**%s** - *%s* - %s\n\n", $weekly->title, $weekly->criteria, $weekly->reward);
-}
-
-if (isset($data->{Order::ORDER_SPECIAL})) {
-    $body .= "Special Order:\n\n";
-    $special = $data->{Order::ORDER_SPECIAL};
-    $body .= sprintf("**%s** - *%s* - %s\n\n", $special->title, $special->criteria, $special->reward);
-}
-
-$reddit = new Reddit(
-    getenv('ORDERS_REDDIT_CLIENT_ID'), 
-    getenv('ORDERS_REDDIT_CLIENT_SECRET'), 
-    getenv('ORDERS_REDDIT_USERNAME'), 
-    getenv('ORDERS_REDDIT_PASSWORD')
-);
-
-$redditInfo = $reddit->postLink('WWII', sprintf('Orders for %s', $date), $image);
-
-if (isset($redditInfo->name)) {
-    $reddit->postComment($redditInfo->name, $body);
-}
-
 
 // Zombies
 $data = json_decode(shell_exec('php zombies.php'));
