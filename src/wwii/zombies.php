@@ -29,12 +29,6 @@ foreach ($orders->data->Achievements as $achievement) {
 $index = 0;
 $row = 0;
 
-$order_title_position_x = 77;
-$order_title_position_y = 27;
-
-$order_critera_position_x = 12;
-$order_critera_position_y = 100;
-
 // Daily
 foreach ($parsed_orders[Order::ORDER_ZOMBIES_DAILY] as $order) { 
     // Something is wrong if this is being looped over more than 6 times. Leave.
@@ -42,9 +36,9 @@ foreach ($parsed_orders[Order::ORDER_ZOMBIES_DAILY] as $order) {
     $order_name = $order->label ?? $order->name;
     $reward = Reward::parse($order->successRewards[0]);
     $panel = new Order($image, $order);
-    $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, $order_title_position_x + ($index * 367), $order_title_position_y + ($row * 156));
-    $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, $order_title_position_x + ($index * 367), ($order_title_position_y + 10) + ($row * 156));
-    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x + ($index * 367), $order_critera_position_y + ($row * 156));
+    $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, DAILY_ORDER_TITLE_POSITION_X + ($index * ORDER_X_DIFFERENCE), DAILY_ORDER_TITLE_POSITION_Y + ($row * ORDER_Y_DIFFERENCE));
+    $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, DAILY_ORDER_TITLE_POSITION_X + ($index * ORDER_X_DIFFERENCE), (DAILY_ORDER_TITLE_POSITION_Y + ORDER_REWARD_POSITION_Y_DIFFERENCE) + ($row * ORDER_Y_DIFFERENCE));
+    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, DAILY_ORDER_CRITERIA_POSITION_X + ($index * ORDER_X_DIFFERENCE), DAILY_ORDER_CRITERIA_POSITION_Y + ($row * ORDER_Y_DIFFERENCE));
 
     if (++$index % 3 == 0) {
         $row++;
@@ -60,12 +54,6 @@ foreach ($parsed_orders[Order::ORDER_ZOMBIES_DAILY] as $order) {
 
 $index = 0;
 
-$order_title_position_x = 77;
-$order_title_position_y = 334;
-
-$order_critera_position_x = 12;
-$order_critera_position_y = 416;
-
 foreach ($parsed_orders[Order::ORDER_ZOMBIES_WEEKLY] as $order) {
     // Something is wrong if this is being looped over more than 3 times. Leave.
     if ($index >= 3) break;
@@ -73,9 +61,9 @@ foreach ($parsed_orders[Order::ORDER_ZOMBIES_WEEKLY] as $order) {
     $reward = Reward::parse($order->successRewards[0]);
 
     $panel = new Order($image, $order);
-    $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, $order_title_position_x + ($index * 367), $order_title_position_y);
-    $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, $order_title_position_x + ($index * 367), $order_title_position_y + 10);
-    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x + ($index * 367), $order_critera_position_y);
+    $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, WEEKLY_ORDER_TITLE_POSITION_X + ($index * ORDER_X_DIFFERENCE), WEEKLY_ORDER_TITLE_POSITION_Y);
+    $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, WEEKLY_ORDER_TITLE_POSITION_X + ($index * ORDER_X_DIFFERENCE), WEEKLY_ORDER_TITLE_POSITION_Y + ORDER_REWARD_POSITION_Y_DIFFERENCE);
+    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, WEEKLY_ORDER_CRITERIA_POSITION_X + ($index * ORDER_X_DIFFERENCE), WEEKLY_ORDER_CRITERIA_POSITION_Y);
 
     $index++;
 
@@ -86,21 +74,15 @@ foreach ($parsed_orders[Order::ORDER_ZOMBIES_WEEKLY] as $order) {
     ];
 }
 
-$order_title_position_x = 338;
-$order_title_position_y = 491;
-
-$order_critera_position_x = 265;
-$order_critera_position_y = 565;
-
 if (array_key_exists(Order::ORDER_ZOMBIES_SPECIAL, $parsed_orders)) {
     $order = $parsed_orders[Order::ORDER_ZOMBIES_SPECIAL][0];
     $order_name = $order->label ?? $order->name;
     $reward = Reward::parse($order->successRewards[0]);
 
     $panel = new Order($image, $order);
-    $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, $order_title_position_x, $order_title_position_y);
-    $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, $order_title_position_x, $order_title_position_y + 10, true);
-    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, $order_critera_position_x , $order_critera_position_y);
+    $panel->title($order_font_file, ORDER_TITLE_FONT_SIZE, SPECIAL_ORDER_TITLE_POSITION_X, SPECIAL_ORDER_TITLE_POSITION_Y);
+    $panel->reward($reward, $order_critera_font_file, ORDER_REWARD_FONT_SIZE, SPECIAL_ORDER_TITLE_POSITION_X, SPECIAL_ORDER_TITLE_POSITION_Y + ORDER_REWARD_POSITION_Y_DIFFERENCE, true);
+    $criteria = $panel->criteria($order_critera_font_file, ORDER_CRITERIA_FONT_SIZE, SPECIAL_ORDER_CRITERIA_POSITION_X, SPECIAL_ORDER_CRITERIA_POSITION_Y, 70);
 
     $orders_text[Order::ORDER_ZOMBIES_WEEKLY][] = [
         "title" => $order_name,
