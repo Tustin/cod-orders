@@ -32,8 +32,8 @@ class Order {
     const REWARD_IMAGE_W = 512 / 7;
     const REWARD_IMAGE_H = 512 / 7;
 
-    const WEAPON_IMAGE_W = 512 / 2;
-    const WEAPON_IMAGE_H = 512 / 2;
+    const WEAPON_IMAGE_W = 512 / 1.93;
+    const WEAPON_IMAGE_H = 512 / 1.93;
 
     const WEAPON_X_DIFFERENCE = 750;
     const WEAPON_Y_DIFFERENCE = 155;
@@ -125,7 +125,7 @@ class Order {
         imagettftext($this->template, $textSize, 0, $reward_text_pos, $y, $this->white, $font, $reward_item);
     }
 
-    public function criteria($font, int $textSize, int $x, int $y, int $wrap = 40) {
+    public function criteria($font, int $textSize, int $x, int $y, int $wrap = 46) {
         $order_critera = $this->order->descriptionLabel ?? "No criteria given.";
         $order_critera = wordwrap($order_critera, $wrap);
         imagettftext($this->template, $textSize, 0, $x, $y, $this->white, $font, $order_critera);

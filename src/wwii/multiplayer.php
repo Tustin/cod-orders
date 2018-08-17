@@ -9,7 +9,7 @@ require 'weapon.php';
 
 setup();
 
-$orders = get_orders();
+$orders = get_orders($argv[1]);
 $weapons = get_weapons_csv(); 
 
 file_put_contents('orders/multiplayer/' . date("mdY") . '.json', $orders);
@@ -94,6 +94,7 @@ if (array_key_exists(Order::ORDER_SPECIAL, $parsed_orders)) {
     imagettftext($image, ORDER_TITLE_FONT_SIZE, 0, SPECIAL_ORDER_TITLE_POSITION_X, SPECIAL_ORDER_TITLE_POSITION_Y, $white, $order_font_file, "No Special Order Available");
 }
 
+//$order_image_name = 'orders/multiplayer/' . uniqid() . '.png';
 $order_image_name = 'orders/multiplayer/' . date("mdY") . '.png';
 $orders_text["image"] = $order_image_name;
 

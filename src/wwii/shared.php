@@ -41,14 +41,22 @@ function setup() : void {
     if (!file_exists('orders/zombies/')) mkdir('orders/zombies/');
 }
 
-function get_orders() : object {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://my.callofduty.com/api/papi-client/crm/cod/v2/title/wwii/platform/psn/achievements/scheduled/gamer/tustin25/');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $orders = curl_exec($ch);
-    curl_close($ch);
+function get_orders(?string $file = null) : object {
+    if ($file === null) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://my.callofduty.com/api/papi-client/crm/cod/v2/title/wwii/platform/psn/achievements/scheduled/gamer/tustin25/');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $orders = curl_exec($ch);
+        curl_close($ch);
+    
+        $orders = json_decode($orders);
+    } else {
+        if (!file_exists($file)) throw new Exception("file doesnt exist");
+        $orders = json_decode(file_get_contents($file));
+    }
 
-    $orders = json_decode($orders);
+    if (json_last_error() !== JSON_ERROR_NONE) throw new Exception("failed to parse json");
+
 
     if (!$orders->data || $orders->status != "success" || !count($orders->data->Achievements)) throw new Exception("bad order data");
 
