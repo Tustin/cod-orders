@@ -90,7 +90,7 @@ if (array_key_exists(Order::ORDER_ZOMBIES_SPECIAL, $parsed_orders)) {
         "reward" => $reward->label
     ];
 } else {
-    imagettftext($image, ORDER_TITLE_FONT_SIZE, 0, $order_title_position_x, $order_title_position_y, $white, $order_font_file, "No Special Order Available");
+    imagettftext($image, ORDER_TITLE_FONT_SIZE, 0, SPECIAL_ORDER_TITLE_POSITION_X, SPECIAL_ORDER_TITLE_POSITION_Y, $white, $order_font_file, "No Special Order Available");
 }
 
 $order_image_name = 'orders/zombies/' . date("mdY") . '.png';
